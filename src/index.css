@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/...');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@layer base {
+  :root {
+    --background: 36 47% 97%;        /* warm ivory #FCF9F2 */
+    --foreground: 0 0% 10%;          /* deep charcoal #1A1A1A */
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 10%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 10%;
+    --primary: 32 47% 65%;           /* rose gold #D4A373 */
+    --primary-foreground: 0 0% 100%;
+    --secondary: 36 38% 90%;
+    --secondary-foreground: 0 0% 10%;
+    --muted: 36 33% 92%;
+    --muted-foreground: 30 10% 35%;
+    --accent: 36 38% 82%;            /* champagne #E5D3B3 */
+    --accent-foreground: 0 0% 10%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 36 28% 86%;
+    --input: 36 28% 86%;
+    --ring: 32 47% 65%;
+    --chart-1: 12 76% 61%;
+    --chart-2: 173 58% 39%;
+    --chart-3: 197 37% 24%;
+    --chart-4: 43 74% 66%;
+    --chart-5: 27 87% 67%;
+    --radius: 0.25rem;
+    --font-heading: 'Cormorant Garamond', ui-serif, Georgia, serif;
+    --font-body: 'Inter', ui-sans-serif, system-ui, sans-serif;
+    --font-display: 'Cormorant Garamond', ui-serif, Georgia, serif;
+    --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    --sidebar-background: 36 47% 97%;
+    --sidebar-foreground: 0 0% 10%;
+    --sidebar-primary: 32 47% 65%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 36 38% 90%;
+    --sidebar-accent-foreground: 0 0% 10%;
+    --sidebar-border: 36 28% 86%;
+    --sidebar-ring: 32 47% 65%;
+  }
+}
+
+@layer base {
+  * { @apply border-border outline-ring/50; }
+  html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
+  body { @apply bg-background text-foreground font-body; font-family: 'Inter', sans-serif; }
+  h1, h2, h3, h4, .font-serif { font-family: 'Cormorant Garamond', serif; }
+}
+
+@layer components {
+  .glass {
+    background: rgba(255, 255, 255, 0.55);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+  }
+  .glass-dark {
+    background: rgba(26, 26, 26, 0.45);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+  }
+  .signature-line {
+    background: linear-gradient(to bottom, transparent, #D4A373, transparent);
+  }
+  .text-gradient-gold {
+    background: linear-gradient(120deg, #D4A373, #E5D3B3, #D4A373);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 bg-beauty-charcoal text-white px-8 py-4 text-xs tracking-[0.2em] uppercase font-medium transition-all duration-500 hover:bg-beauty-gold;
+  }
+  .btn-outline {
+    @apply inline-flex items-center justify-center gap-2 border border-beauty-charcoal/30 text-beauty-charcoal px-8 py-4 text-xs tracking-[0.2em] uppercase font-medium transition-all duration-500 hover:bg-beauty-charcoal hover:text-white;
+  }
+}
+
+/* Focus ring for accessibility */
+:focus-visible {
+  outline: 2px solid #D4A373;
+  outline-offset: 4px;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: #FCF9F2; }
+::-webkit-scrollbar-thumb { background: #D4A373; border-radius: 4px; }
